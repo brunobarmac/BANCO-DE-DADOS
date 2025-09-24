@@ -1,0 +1,29 @@
+CREATE TABLE cadlivros (
+    id int not null primary key,
+    titulo varchar(255) not null,
+    autor char(255) not null,
+    idade int,
+    ano_publicacao char(10)
+);
+RENAME TABLE cadlivros TO livros;
+
+ALTER TABLE cadlivros
+modify column ano_publicacao INT NOT NULL;
+
+ALTER TABLE livros
+add column genero VARCHAR(50);
+
+ALTER TABLE cadlivros
+ADD quant_disponivel INT;
+
+ALTER TABLE cadlivros
+modify column titulo VARCHAR(50);
+
+ALTER TABLE cadlivros
+DROP COLUMN idade;
+
+ALTER TABLE cadlivros
+modify COLUMN ano_publicacao INT;
+
+ALTER TABLE cadlivros
+ADD editora VARCHAR(50) NOT NULL;
