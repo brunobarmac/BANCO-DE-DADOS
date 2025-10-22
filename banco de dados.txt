@@ -1,0 +1,51 @@
+Create database Comercio;
+Use Comercio;
+
+CREATE TABLE vendedor(
+cod int not null primary key,
+nome_vendedor varchar(50) not null,
+ produto_vendido varchar(50) not null,
+ cidade char(40) not null,
+ estado char(2),
+ email varchar(50),
+ valor_vendido decimal(10,2),
+ comissao decimal (10,2)
+ );
+ 
+ CREATE TABLE produtos(
+ cod int not null primary key,
+ nome varchar(50),
+ preco_unitario decimal(10,2),
+ quantidade int,
+ preco_total decimal(10,2)
+ );
+ 
+insert into vendedor values (1, "Bruno", "ar condicionado", "sao paulo", "SP", "bruno@gmail.com",1000.00);
+insert into vendedor values (2, "Caua", "relogio", "sao paulo", "SP","caua@gmsil.com", 3500.99);
+insert into vendedor values (3, "Henrique", "bola", "sao paulo","SP", "henrique@gmail.com", 100.00);
+insert into vendedor values (4, "Luiz", "carro rosa","sao paulo", "SP", "luiz@gmail.com", 120000.00);
+insert into vendedor values (5, "Amanda", "liquidificador", "Curitiba", "PR", "amanda@gmail.com", 450.00);
+insert into vendedor values (6, "Felipe", "bicicleta", "Porto Alegre", "RS", "felipe@hotmail.com", 1800.00);
+insert into vendedor values (7, "Juliana", "celular", "Salvador", "BA", "juliana@yahoo.com", 3200.00);
+insert into vendedor values (8, "Rafael", "notebook", "Fortaleza", "CE", "rafael@gmail.com", 4800.00);
+insert into vendedor values (9, "Camila", "mesa de jantar", "Belo Horizonte", "MG", "camila@outlook.com", 2300.00);
+insert into vendedor values (10, "Igor", "tênis esportivo", "Recife", "PE", "igor@gmail.com", 600.00);
+
+insert into produtos values (510, "monitor", "1000", 20),
+(511, "teclado", "200", 100),
+(512, "mouse", "80", 120),
+(513, "headset", "350", 50),
+(514, "webcam", "400", 30),
+(515, "caixa de som", "250", 40),
+(516, "estabilizador", "150", 70),
+(517, "pendrive", "90", 200),
+(518, "hd externo", "450", 25),
+(519, "cabo HDMI", "120", 150);
+
+SELECT * FROM CADFUN;
+
+select nome_vendedor, comissao, comissao + (produto_vendido *0.10) as comissao
+from  cadfun;
+
+ 
+ 
